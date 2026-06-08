@@ -1,0 +1,44 @@
+.marquee {
+  background: #191b2e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  margin-top: 0;
+  padding: 0.85rem 0;
+}
+
+.track {
+  animation: marquee 28s linear infinite;
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+}
+
+.track span {
+  background: rgba(255, 255, 255, 0.075);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.84rem;
+  font-weight: 900;
+  padding: 0.55rem 0.9rem;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+  }
+}

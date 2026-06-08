@@ -1,0 +1,22 @@
+.heading {
+  margin-bottom: 2rem;
+}
+
+.heading p {
+  color: #ff5a2f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin: 0 0 0.55rem;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  color: #24263d;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1;
+  margin: 0;
+}
+
+.center {
+  text-align: center;
+}

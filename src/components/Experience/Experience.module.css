@@ -1,0 +1,154 @@
+.section {
+  background: #f6f7fb;
+  padding: 6.5rem 11vw;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+}
+
+.grid h3 {
+  align-items: center;
+  color: #172026;
+  display: flex;
+  font-size: 1.35rem;
+  gap: 0.6rem;
+  margin: 0 0 1.2rem;
+}
+
+.grid h3 svg {
+  color: #e85d3f;
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+}
+
+.item,
+.education article {
+  border: 1px solid rgba(35, 37, 60, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.item {
+  background: #fff;
+  box-shadow: 0 16px 34px rgba(35, 37, 60, 0.06);
+  position: relative;
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.item::before {
+  background: linear-gradient(180deg, #ff5a2f, #ffb347);
+  border-radius: 999px;
+  content: "";
+  height: calc(100% - 2rem);
+  left: -1px;
+  opacity: 0;
+  position: absolute;
+  top: 1rem;
+  transition: opacity 180ms ease;
+  width: 4px;
+}
+
+.item:hover {
+  box-shadow: 0 24px 54px rgba(35, 37, 60, 0.12);
+  transform: translateY(-4px);
+}
+
+.item:hover::before {
+  opacity: 1;
+}
+
+.itemHeader {
+  align-items: flex-start;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.item h4,
+.education h4 {
+  color: #172026;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.item p,
+.education p {
+  color: #60707a;
+  line-height: 1.55;
+  margin: 0.35rem 0 0;
+}
+
+.itemHeader span,
+.education article span {
+  color: #ff5a2f;
+  flex: 0 0 auto;
+  font-size: 0.83rem;
+  font-weight: 800;
+}
+
+.item ul {
+  color: #3f4b52;
+  line-height: 1.65;
+  margin: 1rem 0 0;
+  padding-left: 1.1rem;
+}
+
+.education {
+  align-self: start;
+  display: grid;
+  gap: 1rem;
+}
+
+.education h3 {
+  margin-bottom: 0.2rem;
+}
+
+.education article {
+  background: #24263d;
+  color: #fff;
+  overflow: hidden;
+  position: relative;
+}
+
+.education article::after {
+  background: radial-gradient(circle, rgba(255, 90, 47, 0.22), transparent 70%);
+  content: "";
+  height: 140px;
+  position: absolute;
+  right: -60px;
+  top: -60px;
+  width: 140px;
+}
+
+.education h4 {
+  color: #fff;
+}
+
+.education p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+@media (max-width: 960px) {
+  .section {
+    padding: 4.5rem 1.2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .itemHeader {
+    display: block;
+  }
+
+  .itemHeader span {
+    display: inline-block;
+    margin-top: 0.65rem;
+  }
+}

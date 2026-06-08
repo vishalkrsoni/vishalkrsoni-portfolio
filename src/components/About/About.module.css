@@ -1,0 +1,87 @@
+.about {
+  align-items: center;
+  display: grid;
+  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+  padding: 6.5rem 11vw;
+}
+
+.imagePanel {
+  aspect-ratio: 4 / 5;
+  background: url("/images/about-workspace.png") center/cover;
+  border: 10px solid #fff;
+  border-radius: 14px;
+  box-shadow: 0 28px 70px rgba(35, 37, 60, 0.18);
+  min-height: 420px;
+}
+
+.copy p {
+  color: #53616a;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin: 0 0 1.4rem;
+}
+
+.strengths {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.strength {
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid rgba(35, 37, 60, 0.08);
+  border-left: 4px solid #ff5a2f;
+  border-radius: 10px;
+  display: flex;
+  gap: 0.85rem;
+  padding: 1rem;
+}
+
+.strength svg {
+  color: #2f8f70;
+  flex: 0 0 auto;
+  margin-top: 0.1rem;
+}
+
+.strength span {
+  color: #26343c;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+
+.actions a {
+  border-radius: 999px;
+  font-weight: 800;
+  padding: 0.9rem 1.1rem;
+}
+
+.actions a:first-child {
+  background: #24263d;
+  color: #fff;
+}
+
+.actions a:last-child {
+  background: #fff;
+  border: 1px solid rgba(23, 32, 38, 0.12);
+  color: #172026;
+}
+
+@media (max-width: 880px) {
+  .about {
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    padding: 4.5rem 1.2rem;
+  }
+
+  .imagePanel {
+    min-height: 320px;
+  }
+}

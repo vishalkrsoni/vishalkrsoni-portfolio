@@ -1,0 +1,72 @@
+.impact {
+  background: #fff;
+  border: 1px solid rgba(35, 37, 60, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 24px 70px rgba(35, 37, 60, 0.12);
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 auto;
+  max-width: 1180px;
+  overflow: hidden;
+  position: relative;
+  width: calc(100% - 2.4rem);
+  z-index: 4;
+}
+
+.metric {
+  background: #fff;
+  display: grid;
+  gap: 0.45rem;
+  min-height: 145px;
+  padding: 1.5rem;
+  position: relative;
+  transition: transform 160ms ease;
+}
+
+.metric::after {
+  background: linear-gradient(90deg, #ff5a2f, #6ee7d8);
+  bottom: 0;
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+  width: 100%;
+}
+
+.metric:hover {
+  transform: translateY(-4px);
+}
+
+.metric:hover::after {
+  transform: scaleX(1);
+}
+
+.metric strong {
+  color: #ff5a2f;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1;
+}
+
+.metric span {
+  color: #4c5365;
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .impact {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: -3rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .impact {
+    grid-template-columns: 1fr;
+  }
+}
