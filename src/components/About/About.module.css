@@ -85,3 +85,61 @@
     min-height: 320px;
   }
 }
+
+@media (max-width: 560px) {
+  .about {
+    overflow: hidden;
+    padding: 3.6rem 1rem;
+  }
+
+  .copy {
+    min-width: 0;
+  }
+
+  .imagePanel {
+    aspect-ratio: 16 / 11;
+    border-width: 7px;
+    border-radius: 16px;
+    min-height: 0;
+  }
+
+  .copy p {
+    font-size: 0.98rem;
+    line-height: 1.72;
+    margin-bottom: 1rem;
+  }
+
+  .strengths {
+    display: flex;
+    gap: 0.8rem;
+    margin: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0 0 0.45rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    width: 100%;
+    mask-image: linear-gradient(90deg, #000 86%, transparent);
+  }
+
+  .strengths::-webkit-scrollbar {
+    display: none;
+  }
+
+  .strength {
+    border-left-width: 0;
+    border-top: 4px solid #ff5a2f;
+    flex: 0 0 min(82vw, 310px);
+    min-height: 128px;
+    scroll-snap-align: center;
+  }
+
+  .actions {
+    display: grid;
+  }
+
+  .actions a {
+    text-align: center;
+  }
+}

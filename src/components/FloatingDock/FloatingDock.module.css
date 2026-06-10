@@ -22,7 +22,9 @@
   display: inline-flex;
   height: 38px;
   justify-content: center;
-  transition: background 160ms ease, transform 160ms ease;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
   width: 38px;
 }
 

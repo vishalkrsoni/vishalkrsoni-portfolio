@@ -1,4 +1,10 @@
-import { ArrowRight, Layers, RadioTower, Rocket, ServerCog } from "lucide-react";
+import {
+  ArrowRight,
+  Layers,
+  RadioTower,
+  Rocket,
+  ServerCog,
+} from "lucide-react";
 import { deliveryPrinciples, expertise } from "@/data/resume";
 import SectionHeading from "@/components/SectionHeading/SectionHeading";
 import styles from "./Expertise.module.css";

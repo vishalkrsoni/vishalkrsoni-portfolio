@@ -1,6 +1,10 @@
 .section {
   background:
-    radial-gradient(circle at top left, rgba(255, 155, 74, 0.16), transparent 34rem),
+    radial-gradient(
+      circle at top left,
+      rgba(255, 155, 74, 0.16),
+      transparent 34rem
+    ),
     linear-gradient(180deg, #24263d 0%, #1d1f34 100%);
   color: #fff;
   overflow: hidden;
@@ -46,7 +50,10 @@
   flex: 1 1 0;
   font-weight: 900;
   padding: 0.65rem 0.95rem;
-  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
   white-space: nowrap;
 }
 
@@ -66,9 +73,16 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 }
 
+.mobileChrome {
+  display: none;
+}
+
 .card {
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.045));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.12),
+    rgba(255, 255, 255, 0.045)
+  );
   border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 12px;
   display: flex;
@@ -79,11 +93,19 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .card::before {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.18), rgba(110, 231, 216, 0.14), transparent);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(110, 231, 216, 0.14),
+    transparent
+  );
   content: "";
   height: 1px;
   inset: 0 0 auto;
@@ -93,7 +115,11 @@
 }
 
 .card::after {
-  background: radial-gradient(circle at 20% 0%, rgba(110, 231, 216, 0.12), transparent 18rem);
+  background: radial-gradient(
+    circle at 20% 0%,
+    rgba(110, 231, 216, 0.12),
+    transparent 18rem
+  );
   content: "";
   inset: 0;
   opacity: 0;
@@ -134,7 +160,10 @@
   display: inline-flex;
   height: 38px;
   justify-content: center;
-  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
   width: 38px;
 }
 
@@ -262,7 +291,11 @@
   font-weight: 900;
   gap: 0.45rem;
   padding: 0.72rem 1rem;
-  transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 .readButton:hover {
@@ -278,7 +311,9 @@
   display: inline-flex;
   font-weight: 800;
   gap: 0.5rem;
-  transition: color 160ms ease, transform 160ms ease;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 .textLink:hover {
@@ -298,7 +333,11 @@
 .modal {
   animation: modalIn 180ms ease both;
   background:
-    radial-gradient(circle at top left, rgba(110, 231, 216, 0.12), transparent 22rem),
+    radial-gradient(
+      circle at top left,
+      rgba(110, 231, 216, 0.12),
+      transparent 22rem
+    ),
     linear-gradient(145deg, rgba(47, 49, 78, 0.98), rgba(29, 31, 52, 0.98));
   border: 1px solid rgba(110, 231, 216, 0.2);
   border-radius: 14px;
@@ -368,7 +407,9 @@
   flex: 0 0 auto;
   height: 42px;
   justify-content: center;
-  transition: background 160ms ease, transform 160ms ease;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
   width: 42px;
 }
 
@@ -429,17 +470,148 @@
 
 @media (max-width: 760px) {
   .section {
-    padding: 4.5rem 1.2rem;
+    overflow: hidden;
+    padding: 3.8rem 1rem;
+  }
+
+  .headingWrap > p {
+    font-size: 0.96rem;
+    line-height: 1.62;
+    margin-bottom: 1.4rem;
   }
 
   .filters {
-    border-radius: 18px;
-    flex-direction: column;
+    border-radius: 16px;
+    margin-bottom: 1.45rem;
     max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0.32rem;
+    scrollbar-width: none;
+    width: 100%;
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filters button {
+    flex: 0 0 auto;
+    font-size: 0.82rem;
+    min-height: 42px;
+    padding: 0.6rem 0.8rem;
   }
 
   .grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    gap: 0.85rem;
+    margin: 0;
+    max-width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0 0 0.7rem;
+    scroll-padding-inline: 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    width: 100%;
+    mask-image: linear-gradient(90deg, #000 88%, transparent);
+  }
+
+  .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    border-radius: 16px;
+    flex: 0 0 min(84vw, 330px);
+    min-height: 336px;
+    padding: 1rem;
+    scroll-snap-align: center;
+  }
+
+  .cardTop {
+    gap: 0.6rem;
+  }
+
+  .card span {
+    max-width: calc(100% - 48px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .card h3 {
+    font-size: 1.2rem;
+    line-height: 1.22;
+  }
+
+  .card p {
+    font-size: 0.92rem;
+    line-height: 1.58;
+  }
+
+  .card > div:nth-child(2) p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+
+  .stack {
+    display: -webkit-box;
+    font-size: 0.78rem !important;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-height: 1.5;
+    overflow: hidden;
+  }
+
+  .carouselShell {
+    position: relative;
+  }
+
+  .mobileChrome {
+    align-items: center;
+    color: rgba(255, 255, 255, 0.62);
+    display: flex;
+    font-size: 0.72rem;
+    font-weight: 900;
+    gap: 0.65rem;
+    justify-content: center;
+    margin: -0.6rem 0 0.9rem;
+    max-width: 100%;
+  }
+
+  .mobileChrome div {
+    align-items: center;
+    display: flex;
+    gap: 0.35rem;
+    max-width: 190px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0.15rem 0;
+    scrollbar-width: none;
+  }
+
+  .mobileChrome div::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobileChrome button {
+    background: rgba(255, 255, 255, 0.24);
+    border: 0;
+    border-radius: 999px;
+    height: 0.42rem;
+    padding: 0;
+    transition:
+      background 160ms ease,
+      width 160ms ease;
+    width: 0.42rem;
+  }
+
+  .mobileChrome .activeDot {
+    background: #6ee7d8;
+    width: 1.55rem;
   }
 
   .details {
@@ -449,12 +621,25 @@
   .actions {
     align-items: flex-start;
     flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .readButton,
+  .textLink {
+    justify-content: center;
+    min-height: 42px;
+    width: 100%;
   }
 
   .modal {
-    max-height: 86vh;
+    border-radius: 18px 18px 0 0;
+    bottom: 0;
+    left: 0;
+    max-height: 88dvh;
     padding: 1rem;
-    width: calc(100vw - 1.5rem);
+    top: auto;
+    transform: none;
+    width: 100%;
   }
 
   .modalFooter {
@@ -463,5 +648,40 @@
 
   .modalFooter .textLink {
     margin-top: 0;
+  }
+
+  .modalHeader h3 {
+    font-size: 1.45rem;
+    line-height: 1.15;
+  }
+
+  .modalDescription {
+    font-size: 0.94rem;
+    line-height: 1.58;
+  }
+
+  .highlights li {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 380px) {
+  .card {
+    flex-basis: 88%;
+  }
+}
+
+@media (max-width: 760px) {
+  @keyframes modalIn {
+    from {
+      opacity: 0;
+      transform: translateY(1.2rem);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }

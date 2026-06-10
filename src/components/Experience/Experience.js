@@ -19,7 +19,10 @@ export default function Experience() {
           </h3>
           <div className={styles.timeline}>
             {experiences.map((item) => (
-              <article className={styles.item} key={`${item.company}-${item.date}`}>
+              <article
+                className={styles.item}
+                key={`${item.company}-${item.date}`}
+              >
                 <div className={styles.itemHeader}>
                   <div>
                     <h4>{item.company}</h4>
@@ -35,19 +38,31 @@ export default function Experience() {
               </article>
             ))}
           </div>
+          <div className={styles.mobileDots} aria-hidden="true">
+            {experiences.map((item) => (
+              <span key={item.company} />
+            ))}
+          </div>
         </div>
         <aside className={styles.education}>
           <h3>
             <GraduationCap size={22} />
             Education
           </h3>
-          {education.map((item) => (
-            <article key={item.title}>
-              <span>{item.date}</span>
-              <h4>{item.title}</h4>
-              <p>{item.subtitle}</p>
-            </article>
-          ))}
+          <div className={styles.educationTrack}>
+            {education.map((item) => (
+              <article key={item.title}>
+                <span>{item.date}</span>
+                <h4>{item.title}</h4>
+                <p>{item.subtitle}</p>
+              </article>
+            ))}
+          </div>
+          <div className={styles.educationDots} aria-hidden="true">
+            {education.map((item) => (
+              <span key={item.title} />
+            ))}
+          </div>
         </aside>
       </div>
     </section>

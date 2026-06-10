@@ -34,7 +34,8 @@ export default function Header() {
         className={styles.menuButton}
         type="button"
         aria-label="Toggle navigation"
-        onClick={() => setIsOpen((value) => !value)}>
+        onClick={() => setIsOpen((value) => !value)}
+      >
         {isOpen ? <X size={22} /> : <Menu size={22} />}
       </button>
       <nav className={`${styles.nav} ${isOpen ? styles.open : ""}`}>

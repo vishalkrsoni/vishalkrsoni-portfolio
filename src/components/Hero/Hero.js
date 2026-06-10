@@ -113,7 +113,11 @@ export default function Hero() {
         })}
       </div>
 
-      <a className={styles.scrollCue} href="#about" aria-label="Scroll to about">
+      <a
+        className={styles.scrollCue}
+        href="#about"
+        aria-label="Scroll to about"
+      >
         <ArrowDown size={20} />
       </a>
     </section>

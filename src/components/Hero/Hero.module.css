@@ -1,8 +1,16 @@
 .hero {
   align-items: start;
   background:
-    radial-gradient(circle at 12% 18%, rgba(255, 90, 47, 0.26), transparent 20rem),
-    radial-gradient(circle at 86% 24%, rgba(94, 234, 212, 0.18), transparent 22rem),
+    radial-gradient(
+      circle at 12% 18%,
+      rgba(255, 90, 47, 0.26),
+      transparent 20rem
+    ),
+    radial-gradient(
+      circle at 86% 24%,
+      rgba(94, 234, 212, 0.18),
+      transparent 22rem
+    ),
     linear-gradient(135deg, #151827 0%, #202238 52%, #131726 100%);
   color: #fff;
   display: grid;
@@ -105,7 +113,9 @@
   gap: 0.55rem;
   min-height: 52px;
   padding: 0.9rem 1.15rem;
-  transition: box-shadow 180ms ease, transform 180ms ease;
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease;
 }
 
 .primary {
@@ -172,8 +182,11 @@
 
 .showcase {
   align-self: start;
-  background:
-    linear-gradient(160deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.06));
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.16),
+    rgba(255, 255, 255, 0.06)
+  );
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 26px;
   box-shadow: 0 32px 90px rgba(0, 0, 0, 0.3);
@@ -326,7 +339,9 @@
   display: inline-flex;
   height: 40px;
   justify-content: center;
-  transition: background 180ms ease, transform 180ms ease;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
   width: 40px;
 }
 
@@ -388,34 +403,127 @@
 
 @media (max-width: 700px) {
   .hero {
-    padding: 3rem 1.2rem 4.5rem;
+    gap: 1.25rem;
+    min-height: auto;
+    overflow: hidden;
+    padding: 2.15rem 1rem 4.1rem;
+  }
+
+  .content,
+  .showcase {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .eyebrow {
+    border-radius: 14px;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    padding: 0.55rem 0.7rem;
+  }
+
+  .eyebrow span {
+    font-size: 0.75rem;
+    line-height: 1.35;
   }
 
   .hero h1 {
-    font-size: clamp(2.35rem, 11vw, 3.5rem);
+    font-size: clamp(2.35rem, 11vw, 3.35rem);
+    line-height: 1;
+  }
+
+  .tagline {
+    font-size: 0.98rem;
+    line-height: 1.62;
+    margin-top: 1rem;
   }
 
   .actions {
     display: grid;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
   }
 
   .primary,
   .secondary {
+    font-size: 0.9rem;
     justify-content: center;
+    min-height: 50px;
+    padding-inline: 0.9rem;
     width: 100%;
   }
 
+  .commandCard {
+    border-radius: 14px;
+    margin-top: 1rem;
+  }
+
+  .commandBody p {
+    font-size: 0.86rem;
+  }
+
   .showcase {
-    border-radius: 20px;
+    border-radius: 18px;
+    max-width: 100%;
     min-height: auto;
+    padding: 0.9rem;
+  }
+
+  .cardTop strong {
+    font-size: 0.86rem;
   }
 
   .portraitStage {
-    min-height: 280px;
+    min-height: 210px;
+  }
+
+  .ring {
+    height: min(58vw, 220px);
+    width: min(58vw, 220px);
+  }
+
+  .portrait {
+    width: min(60vw, 235px);
+  }
+
+  .stack {
+    justify-content: flex-start;
+    overflow: auto;
+    padding-bottom: 0.15rem;
+    scrollbar-width: none;
+  }
+
+  .stack::-webkit-scrollbar {
+    display: none;
   }
 
   .metrics {
-    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    min-width: 0;
+  }
+
+  .metrics div {
+    min-height: 78px;
+    padding: 0.62rem;
+  }
+
+  .metrics strong {
+    font-size: 1.18rem;
+  }
+
+  .metrics span {
+    font-size: 0.58rem;
+  }
+
+  .socialRail {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .scrollCue {
+    bottom: 0.9rem;
   }
 }
 

@@ -8,8 +8,10 @@ export default function ScrollProgress() {
 
   useEffect(() => {
     function updateProgress() {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      const nextProgress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      const scrollable =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const nextProgress =
+        scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
       setProgress(nextProgress);
     }
 

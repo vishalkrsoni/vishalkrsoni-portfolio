@@ -12,6 +12,8 @@ const initialForm = {
   message: "",
 };
 
+const contactEndpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT;
+
 export default function Contact() {
   const [form, setForm] = useState(initialForm);
   const [status, setStatus] = useState({ type: "", message: "" });
@@ -30,7 +32,22 @@ export default function Contact() {
     setStatus({ type: "", message: "" });
 
     try {
-      const response = await fetch("/api/contact", {
+      if (!contactEndpoint) {
+        const subject = encodeURIComponent(
+          `Portfolio message from ${form.name}`,
+        );
+        const body = encodeURIComponent(
+          `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`,
+        );
+        window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+        setStatus({
+          type: "success",
+          message: "Opening your email app to send the message.",
+        });
+        return;
+      }
+
+      const response = await fetch(contactEndpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -42,7 +59,10 @@ export default function Contact() {
       }
 
       setForm(initialForm);
-      setStatus({ type: "success", message: data.message });
+      setStatus({
+        type: "success",
+        message: data.message || "Message sent successfully.",
+      });
     } catch (error) {
       setStatus({ type: "error", message: error.message });
     } finally {

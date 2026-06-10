@@ -11,9 +11,9 @@ export default function About() {
       <div className={styles.copy}>
         <SectionHeading eyebrow="About Me" title="Why Choose Me?" />
         <p>
-          Senior Software Engineer with 7+ years of experience building
-          scalable backend systems, MERN applications, real-time communication
-          workflows, and microservices.
+          Senior Software Engineer with 7+ years of experience building scalable
+          backend systems, MERN applications, real-time communication workflows,
+          and microservices.
         </p>
         <div className={styles.strengths}>
           {strengths.map((strength) => (

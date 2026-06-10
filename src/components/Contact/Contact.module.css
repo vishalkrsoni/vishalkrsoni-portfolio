@@ -118,10 +118,42 @@
 
 @media (max-width: 850px) {
   .section {
-    padding: 4.5rem 1.2rem;
+    overflow: hidden;
+    padding: 4.5rem 1rem 3.4rem;
   }
 
   .grid {
+    gap: 1rem;
     grid-template-columns: 1fr;
+  }
+
+  .info,
+  .form {
+    border-radius: 16px;
+    max-width: 100%;
+    min-width: 0;
+    padding: 1rem;
+  }
+
+  .info p {
+    display: none;
+  }
+
+  .info a,
+  .info span {
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+
+  .form {
+    gap: 0.8rem;
+  }
+
+  .form textarea {
+    min-height: 118px;
+  }
+
+  .form button {
+    width: 100%;
   }
 }

@@ -67,6 +67,24 @@
 
 @media (max-width: 560px) {
   .impact {
-    grid-template-columns: 1fr;
+    border-radius: 16px;
+    gap: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: -2.4rem auto 0;
+    max-width: calc(100% - 1.5rem);
+    width: 100%;
+  }
+
+  .metric {
+    min-height: 124px;
+    padding: 1rem;
+  }
+
+  .metric strong {
+    font-size: 1.85rem;
+  }
+
+  .metric span {
+    font-size: 0.8rem;
   }
 }
