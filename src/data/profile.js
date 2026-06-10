@@ -7,7 +7,11 @@ export const profile = {
   location: "Bangalore, India",
   tagline:
     "I build scalable full-stack products with clean backend architecture, real-time workflows, and performance-focused APIs.",
-  roles: ["Microservices Builder", "MERN Stack Engineer", "Real-Time App Developer"],
+  roles: [
+    "Microservices Builder",
+    "MERN Stack Engineer",
+    "Real-Time App Developer",
+  ],
   highlights: ["7+ years experience", "Microservices", "Real-time systems"],
   metrics: [
     { value: "7+", label: "Years building production systems" },
@@ -16,8 +20,8 @@ export const profile = {
     { value: "10k+", label: "Users supported across product workflows" },
   ],
   socials: [
-    { label: "GitHub", href: "https://github.com/vishalkrsoni" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/vishalkrsoni/" },
+    { label: "GitHub", href: "https://github.com/vishalkrsoni" },
     { label: "GitLab", href: "https://gitlab.com/vishalkrsoni" },
     {
       label: "Bitbucket",

@@ -165,7 +165,8 @@ export const projects = [
       "Enhanced React frontend areas where backend behavior needed better visibility, smoother real-time updates, or cleaner user flows.",
       "Created Swagger API documentation, project README, setup notes, and collaborated with DevOps for cloud deployment and release readiness.",
     ],
-    stack: "Node.js, TypeScript, PostgreSQL, Redis, WebSockets, React, Swagger, Microservices",
+    stack:
+      "Node.js, TypeScript, PostgreSQL, Redis, WebSockets, React, Swagger, Microservices",
   },
   {
     title: "Lakers Bay",
@@ -184,7 +185,8 @@ export const projects = [
       "Collaborated across frontend and backend areas to ensure new ticketing flows remained scalable and maintainable.",
       "Validated Redis/Kafka-driven workflows for performance, consistency, and reliable message processing.",
     ],
-    stack: "TypeScript, Monorepo, Redis, Kafka, Node.js, React, Event-Driven Architecture",
+    stack:
+      "TypeScript, Monorepo, Redis, Kafka, Node.js, React, Event-Driven Architecture",
   },
   {
     title: "Cadenz Profile",
@@ -203,7 +205,8 @@ export const projects = [
       "Participated in backend performance optimization, API reliability improvements, and scaling preparation as usage increased.",
       "Worked with cross-functional teams to align banking workflows, frontend contracts, backend APIs, and documentation.",
     ],
-    stack: "Node.js, Express.js, MongoDB, Redis, Kafka, Storybook, Microservices, SaaS",
+    stack:
+      "Node.js, Express.js, MongoDB, Redis, Kafka, Storybook, Microservices, SaaS",
   },
   {
     title: "FlipTree",
@@ -222,7 +225,8 @@ export const projects = [
       "Collaborated with cross-functional teams to connect backend services, payment flows, and external integrations.",
       "Improved backend reliability by using caching and clean service logic around high-traffic lookup paths.",
     ],
-    stack: "Java, Spring Boot, Redis, Stripe, REST APIs, Third-Party Integrations",
+    stack:
+      "Java, Spring Boot, Redis, Stripe, REST APIs, Third-Party Integrations",
   },
   {
     title: "Lumi Matrimony",
@@ -241,7 +245,8 @@ export const projects = [
       "Improved performance-sensitive paths with cache-aware backend changes and cleaner API handling.",
       "Supported delivery of stable matrimonial workflows through testing, issue resolution, and production-focused fixes.",
     ],
-    stack: "Node.js, Redis, REST APIs, Performance Optimization, Matrimony Platform",
+    stack:
+      "Node.js, Redis, REST APIs, Performance Optimization, Matrimony Platform",
   },
   {
     title: "PrepLeaf",
@@ -260,7 +265,8 @@ export const projects = [
       "Worked with design and product teams to improve usability across education and placement-oriented experiences.",
       "Supported production issue fixes and feature delivery for a platform used by students preparing for technical careers.",
     ],
-    stack: "Node.js, React.js, Express.js, MongoDB, Education Platform, REST APIs",
+    stack:
+      "Node.js, React.js, Express.js, MongoDB, Education Platform, REST APIs",
   },
   {
     title: "Prepseed",
@@ -279,7 +285,8 @@ export const projects = [
       "Implemented real-time feedback behavior and worked on improving student-facing performance insights.",
       "Maintained platform reliability by addressing bugs, optimizing backend logic, and supporting iterative product releases.",
     ],
-    stack: "Node.js, Express.js, MongoDB, React.js, Analytics, Real-Time Feedback",
+    stack:
+      "Node.js, Express.js, MongoDB, React.js, Analytics, Real-Time Feedback",
   },
   {
     title: "Glow & Stitch Lounge",
