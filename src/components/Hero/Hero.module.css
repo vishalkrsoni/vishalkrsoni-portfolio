@@ -380,7 +380,7 @@
 
 @media (max-width: 1180px) {
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     min-height: auto;
     padding-left: 7vw;
     padding-right: 7vw;
@@ -407,10 +407,12 @@
     min-height: auto;
     overflow: hidden;
     padding: 2.15rem 1rem 4.1rem;
+    width: 100%;
   }
 
   .content,
   .showcase {
+    max-width: 100%;
     min-width: 0;
     width: 100%;
   }
@@ -429,14 +431,17 @@
   }
 
   .hero h1 {
-    font-size: clamp(2.35rem, 11vw, 3.35rem);
-    line-height: 1;
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1.04;
+    max-width: 100%;
+    overflow-wrap: anywhere;
   }
 
   .tagline {
-    font-size: 0.98rem;
-    line-height: 1.62;
+    font-size: 0.9rem;
+    line-height: 1.55;
     margin-top: 1rem;
+    overflow-wrap: anywhere;
   }
 
   .actions {
@@ -460,61 +465,73 @@
   }
 
   .commandBody p {
-    font-size: 0.86rem;
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
   }
 
   .showcase {
     border-radius: 18px;
-    max-width: 100%;
+    justify-self: center;
+    max-width: 360px;
     min-height: auto;
-    padding: 0.9rem;
+    order: -1;
+    padding: 0.75rem;
+    width: 100%;
+  }
+
+  .cardTop span {
+    font-size: 0.64rem;
   }
 
   .cardTop strong {
-    font-size: 0.86rem;
+    font-size: 0.78rem;
   }
 
   .portraitStage {
-    min-height: 210px;
+    min-height: 165px;
   }
 
   .ring {
-    height: min(58vw, 220px);
-    width: min(58vw, 220px);
+    height: min(45vw, 170px);
+    width: min(45vw, 170px);
   }
 
   .portrait {
-    width: min(60vw, 235px);
+    width: min(48vw, 185px);
   }
 
   .stack {
-    justify-content: flex-start;
-    overflow: auto;
-    padding-bottom: 0.15rem;
-    scrollbar-width: none;
+    gap: 0.35rem;
+    justify-content: center;
+    margin-bottom: 0.65rem;
   }
 
-  .stack::-webkit-scrollbar {
-    display: none;
+  .stack span {
+    font-size: 0.64rem;
+    padding: 0.32rem 0.46rem;
   }
 
   .metrics {
-    gap: 0.5rem;
+    gap: 0.35rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     min-width: 0;
   }
 
   .metrics div {
-    min-height: 78px;
-    padding: 0.62rem;
+    border-radius: 10px;
+    min-height: 68px;
+    min-width: 0;
+    padding: 0.5rem;
   }
 
   .metrics strong {
-    font-size: 1.18rem;
+    font-size: 1rem;
   }
 
   .metrics span {
-    font-size: 0.58rem;
+    font-size: 0.52rem;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
   }
 
   .socialRail {
