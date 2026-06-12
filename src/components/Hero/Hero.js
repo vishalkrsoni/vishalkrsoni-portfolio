@@ -1,22 +1,20 @@
 import {
   ArrowDown,
-  BriefcaseBusiness,
-  Code2,
   Download,
-  GitBranch,
   Mail,
-  Network,
   Sparkles,
   Terminal,
 } from "lucide-react";
+import { FaLinkedinIn } from "react-icons/fa";
+import { SiBitbucket, SiGithub, SiGitlab } from "react-icons/si";
 import { profile } from "@/data/profile";
 import styles from "./Hero.module.css";
 
 const iconMap = {
-  GitHub: Code2,
-  LinkedIn: BriefcaseBusiness,
-  GitLab: GitBranch,
-  Bitbucket: Network,
+  GitHub: SiGithub,
+  LinkedIn: FaLinkedinIn,
+  GitLab: SiGitlab,
+  Bitbucket: SiBitbucket,
 };
 
 const stack = ["Node.js", "React", "TypeScript", "Redis", "PostgreSQL"];
@@ -104,10 +102,19 @@ export default function Hero() {
 
       <div className={styles.socialRail} aria-label="Social links">
         {profile.socials.map((social) => {
-          const Icon = iconMap[social.label] || Mail;
+          const Icon = iconMap[social.label];
+
           return (
-            <a key={social.label} href={social.href} aria-label={social.label}>
-              <Icon size={18} />
+            <a
+              aria-label={social.label}
+              data-social={social.label.toLowerCase()}
+              href={social.href}
+              key={social.label}
+              rel="noreferrer"
+              target="_blank"
+              title={social.label}
+            >
+              <Icon aria-hidden="true" size={19} />
             </a>
           );
         })}

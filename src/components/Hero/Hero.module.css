@@ -332,22 +332,40 @@
 
 .socialRail a {
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
+  border-radius: 50%;
   color: #fff;
   display: inline-flex;
   height: 40px;
   justify-content: center;
   transition:
     background 180ms ease,
+    border-color 180ms ease,
     transform 180ms ease;
   width: 40px;
 }
 
 .socialRail a:hover {
-  background: #ff5a2f;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: currentColor;
   transform: translateY(-3px);
+}
+
+.socialRail a[data-social="linkedin"] {
+  color: #0a66c2;
+}
+
+.socialRail a[data-social="github"] {
+  color: #fff;
+}
+
+.socialRail a[data-social="gitlab"] {
+  color: #fc6d26;
+}
+
+.socialRail a[data-social="bitbucket"] {
+  color: #2684ff;
 }
 
 .scrollCue {

@@ -4,97 +4,44 @@ import { getSkillIcon } from "@/lib/skillIcon";
 import SectionHeading from "@/components/SectionHeading/SectionHeading";
 import styles from "./Skills.module.css";
 
-const skillGroups = [
-  {
-    title: "Backend Core",
-    description: "APIs, data stores, messaging, and service architecture.",
-    items: [
-      "Node Js",
-      "TypeScript",
-      "Java",
-      "Python",
-      "GraphQL",
-      "Redis",
-      "Kafka",
-      "PostgreSQL",
-      "MongoDB",
-      "MySQL",
-    ],
-  },
-  {
-    title: "Frontend Craft",
-    description: "Responsive product surfaces with modern React tooling.",
-    items: [
-      "React Js",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "Tailwind",
-      "MaterialUI",
-      "Bootstrap",
-      "StoryBook",
-    ],
-  },
-  {
-    title: "Cloud & Delivery",
-    description: "Deployment, documentation, and production support tooling.",
-    items: [
-      "Docker",
-      "AWS",
-      "GCP",
-      "CI-CD",
-      "Firebase",
-      "Vite Js",
-      "FastAPI",
-      "Swagger",
-      "Git",
-    ],
-  },
-];
-
 function SkillTile({ skill }) {
   const icon = getSkillIcon(skill);
 
   return (
     <div className={styles.skill}>
-      {icon ? (
-        <Image src={icon} alt="" width={34} height={34} />
-      ) : (
-        <span className={styles.fallback}>{skill.charAt(0)}</span>
-      )}
+      <Image src={icon} alt="" width={42} height={42} />
       <span>{skill}</span>
     </div>
   );
 }
 
+function SkillRow({ skills: rowSkills, reverse = false }) {
+  return (
+    <div className={styles.marquee}>
+      <div className={`${styles.track} ${reverse ? styles.reverse : ""}`}>
+        {[0, 1].map((copy) => (
+          <div className={styles.skillSet} aria-hidden={copy === 1} key={copy}>
+            {rowSkills.map((skill) => (
+              <SkillTile key={`${copy}-${skill}`} skill={skill} />
+            ))}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Skills() {
+  const skillsWithIcons = skills.filter(getSkillIcon);
+  const firstRow = skillsWithIcons.filter((_, index) => index % 2 === 0);
+  const secondRow = skillsWithIcons.filter((_, index) => index % 2 === 1);
+
   return (
     <section className={styles.section} id="skills">
       <SectionHeading align="center" eyebrow="Toolkit" title="Skills" />
-      <div className={styles.groups}>
-        {skillGroups.map((group) => (
-          <article className={styles.group} key={group.title}>
-            <div className={styles.groupHeader}>
-              <span>{group.title}</span>
-              <p>{group.description}</p>
-            </div>
-            <div className={styles.groupSkills}>
-              {group.items.map((skill) => (
-                <SkillTile key={skill} skill={skill} />
-              ))}
-            </div>
-          </article>
-        ))}
-      </div>
-      <div className={styles.grid} aria-label="Additional skills">
-        {skills
-          .filter(
-            (skill) =>
-              !skillGroups.some((group) => group.items.includes(skill)),
-          )
-          .map((skill) => (
-            <SkillTile key={skill} skill={skill} />
-          ))}
+      <div className={styles.rows} aria-label="Technical skills">
+        <SkillRow skills={firstRow} />
+        <SkillRow skills={secondRow} reverse />
       </div>
     </section>
   );

@@ -1,195 +1,128 @@
 .section {
   background: #fff;
-  padding: 6.5rem 11vw;
-}
-
-.groups {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-bottom: 1rem;
-}
-
-.group {
-  background: linear-gradient(
-    145deg,
-    rgba(36, 38, 61, 0.98),
-    rgba(23, 32, 38, 0.95)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  box-shadow: 0 20px 48px rgba(35, 37, 60, 0.16);
-  color: #fff;
   overflow: hidden;
-  padding: 1rem;
-  position: relative;
+  padding: 6.5rem 0;
 }
 
-.group::after {
-  display: none;
-}
-
-.groupHeader,
-.groupSkills {
-  position: relative;
-  z-index: 1;
-}
-
-.groupHeader span {
-  color: #ffb347;
-  display: block;
-  font-size: 0.92rem;
-  font-weight: 900;
-}
-
-.groupHeader p {
-  color: rgba(255, 255, 255, 0.68);
-  font-size: 0.86rem;
-  line-height: 1.55;
-  margin: 0.45rem 0 0.9rem;
-}
-
-.groupSkills {
-  display: grid;
-  gap: 0.55rem;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid {
+.rows {
   display: grid;
   gap: 0.85rem;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+.track {
+  animation: marquee 38s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.reverse {
+  animation-direction: reverse;
+  animation-duration: 42s;
+}
+
+.skillSet {
+  display: flex;
+  gap: 0.85rem;
+  padding-right: 0.85rem;
 }
 
 .skill {
   align-items: center;
-  background: #fff;
-  border: 1px solid rgba(35, 37, 60, 0.08);
-  border-radius: 12px;
+  background: linear-gradient(145deg, #fff, #fafbfe);
+  border: 1px solid rgba(35, 37, 60, 0.12);
+  border-radius: 18px;
   display: flex;
+  flex: 0 0 auto;
   gap: 0.75rem;
-  min-height: 70px;
-  padding: 0.9rem;
-  transition:
-    transform 160ms ease,
-    box-shadow 160ms ease;
-}
-
-.skill:hover {
-  box-shadow: 0 14px 28px rgba(35, 37, 60, 0.1);
-  transform: translateY(-5px) rotate(-1deg);
+  min-height: 78px;
+  padding: 0.85rem 1.15rem;
+  width: 178px;
 }
 
 .skill img {
-  filter: drop-shadow(0 8px 14px rgba(35, 37, 60, 0.12));
-  transition: transform 180ms ease;
+  height: 42px;
+  object-fit: contain;
+  width: 42px;
 }
 
-.skill:hover img {
-  transform: scale(1.12);
+.skill span {
+  color: #24263d;
+  font-size: 0.88rem;
+  font-weight: 850;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 
-.skill span:last-child {
-  color: #26343c;
-  font-size: 0.95rem;
-  font-weight: 800;
+.rows:hover .track {
+  animation-play-state: paused;
 }
 
-.fallback {
-  align-items: center;
-  background: #e85d3f;
-  border-radius: 6px;
-  color: #fff;
-  display: inline-flex;
-  font-weight: 800;
-  height: 34px;
-  justify-content: center;
-  width: 34px;
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @media (max-width: 760px) {
   .section {
-    padding: 3.8rem 1rem;
+    padding: 3.8rem 0;
   }
 
-  .groups {
-    display: grid;
-    gap: 0.7rem;
-    grid-template-columns: minmax(0, 1fr);
-    margin: 0 0 1rem;
-    max-width: 100%;
-    width: 100%;
+  .rows {
+    gap: 0.6rem;
   }
 
-  .group {
-    border-radius: 14px;
-    box-shadow: none;
-    min-height: 0;
-    padding: 0.8rem;
-    width: 100%;
+  .track {
+    animation-duration: 30s;
   }
 
-  .groupHeader span {
-    font-size: 0.8rem;
+  .reverse {
+    animation-duration: 34s;
   }
 
-  .groupHeader p {
-    font-size: 0.7rem;
-    line-height: 1.4;
-    margin: 0.3rem 0 0.6rem;
-  }
-
-  .groupSkills {
-    gap: 0.4rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .grid {
-    display: grid;
-    gap: 0.45rem;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    margin: 0;
-    max-width: 100%;
-    width: 100%;
+  .skillSet {
+    gap: 0.6rem;
+    padding-right: 0.6rem;
   }
 
   .skill {
-    border-radius: 10px;
-    box-shadow: none;
-    display: grid;
-    gap: 0.35rem;
-    justify-items: center;
-    min-height: 68px;
-    min-width: 0;
-    padding: 0.48rem 0.3rem;
-    text-align: center;
+    border-radius: 14px;
+    gap: 0.55rem;
+    min-height: 62px;
+    padding: 0.65rem 0.75rem;
+    width: 138px;
   }
 
   .skill img {
-    filter: none;
-    height: 26px;
-    width: 26px;
+    height: 32px;
+    width: 32px;
   }
 
-  .fallback {
-    font-size: 0.72rem;
-    height: 26px;
-    width: 26px;
+  .skill span {
+    font-size: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+    scrollbar-width: none;
   }
 
-  .skill span:last-child {
-    font-size: 0.62rem;
-    line-height: 1.2;
-    overflow-wrap: anywhere;
+  .marquee::-webkit-scrollbar {
+    display: none;
   }
 
-  .group .skill {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.1);
-    box-shadow: none;
+  .track {
+    animation: none;
   }
 
-  .group .skill span:last-child {
-    color: rgba(255, 255, 255, 0.86);
+  .skillSet:last-child {
+    display: none;
   }
 }

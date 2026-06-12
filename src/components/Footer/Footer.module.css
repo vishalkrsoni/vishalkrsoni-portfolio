@@ -13,15 +13,48 @@
   margin: 0;
 }
 
-.footer div {
+.socials {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.55rem;
 }
 
-.footer a {
+.socials a {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
   color: #fff;
-  font-weight: 800;
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
+  width: 40px;
+}
+
+.socials a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: currentColor;
+  transform: translateY(-3px);
+}
+
+.socials a[data-social="linkedin"] {
+  color: #0a66c2;
+}
+
+.socials a[data-social="github"] {
+  color: #fff;
+}
+
+.socials a[data-social="gitlab"] {
+  color: #fc6d26;
+}
+
+.socials a[data-social="bitbucket"] {
+  color: #2684ff;
 }
 
 @media (max-width: 700px) {
@@ -38,15 +71,13 @@
     font-size: 0.82rem;
   }
 
-  .footer div {
+  .socials {
     gap: 0.5rem;
     justify-content: center;
   }
 
-  .footer a {
-    background: rgba(255, 255, 255, 0.08);
-    border-radius: 999px;
-    font-size: 0.78rem;
-    padding: 0.38rem 0.62rem;
+  .socials a {
+    height: 38px;
+    width: 38px;
   }
 }
