@@ -32,7 +32,6 @@ const skillGroups = [
       "Tailwind",
       "MaterialUI",
       "Bootstrap",
-      "Angular",
       "StoryBook",
     ],
   },
